@@ -358,6 +358,7 @@
 					<h4>Bio:</h4><p class="match-bio">${data[0].bio}</p>
 				</div>
 			`;
+			$('form').trigger('reset');
 			$('.modal-body').replaceWith(fragment);
 			$('#results-modal').modal('show');
 		});
