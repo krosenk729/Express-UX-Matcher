@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>UX Matcher Survey</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<!-- <link rel="stylesheet" type="text/css" href="https://bootswatch.com/4/cerulean/bootstrap.min.css"> -->
+	<link rel="stylesheet" type="text/css" href="https://bootswatch.com/4/litera/bootstrap.min.css">
+	<!-- <link rel="stylesheet" type="text/css" href="https://bootswatch.com/4/minty/bootstrap.min.css"> -->
+	<link rel="stylesheet" type="text/css" href="/assets/style.css">
+</head>
+<body>
+	<header class="jumbotron">
+		<h1>UX Snob Matcher.</h1>
+		<p>Let's face it: we are learning how to be developers so we don't have to design.</p>
+		<p>But until that graduation, find your partner in design-crime by answering the below survey.</p>
+	</header>
+	<main class="container">
+		<div class="card">
+			<div class="card-body">
+				<form id="survey-form">
+					<div class="about-questions">
+						<h3>About You</h3>
+						<!-- user's name -->	
+						<fieldset>
+							<legend><label for="user-name">Your Display Name</label></legend>
+							<input type="text" class="form-control" id="user-name"  placeholder="Enter your name" required>
+							<p class="user-name-error text-danger" style="display: none">Please enter a name</p>
+						</fieldset>
+						<fieldset>
+							<legend><label for="user-bio">Short Bio
+							</label></legend>
+							<input type="text" class="form-control" id="user-bio" aria-describedby="user-bio-help" placeholder="I love good UX.">
+							<p id="user-bio-help" class="help-text">What should matches know about your UX style?</p>
+						</fieldset>
+						<!-- user's image -->	
+						<fieldset>
+							<legend><label for="user-image">Link to profile photo
+							</label></legend>
+							<div class="input-group url">
+								<input type="url" class="input-group-field" id="user-image" aria-describedby="user-image-help" placeholder="https://...">
+								<a href="https://images.google.com" id="user-image-test" target="_blank">
+									<div class="input-group-append">
+										<span class="input-group-text">Test Link > </span>
+									</div>
+								</a>
+							</div>
+							<p id="user-image-help" class="help-text">Image must be approved by moderators before your profile is considered active.</p>
+							<p class="user-image-error text-danger" style="display: none">Please enter a photo url. <strong><a id="user-lorem-pic" href="#">Click here</a></strong> to use a lorem pixel image.</p>
+						</fieldset>
+					</div>
+					<hr>
+					<div class="ux-questions">
+						<h3>UX Design Quiz</h3>
+						<!-- Question 1 -->
+						<fieldset>
+							<legend>Are you the user?</legend>
+							<div class="custom-control custom-radio">
+								<input type="radio" id="q-1-1" name="q-1" class="custom-control-input" value="1" required>
+								<label class="custom-control-label" for="q-1-1">Yes, my preferences should determine everything</label>
+							</div>
+							<div class="custom-control custom-radio">
+								<input type="radio" id="q-1-2" name="q-1" class="custom-control-input" value="10">
+								<label class="custom-control-label" for="q-1-2">No, I am not the user</label>
+							</div>
+						</fieldset>
+						<!-- Question 2 -->
+						<fieldset>
+							<legend>How should color be used?</legend>
+							<div class="custom-control custom-radio">
+								<input type="radio" id="q-2-1" name="q-2" class="custom-control-input" value="10" required>
+								<label class="custom-control-label" for="q-2-1">To add accents and communicate in addition to other indications</label>
+							</div>
+							<div class="custom-control custom-radio">
+								<input type="radio" id="q-2-2" name="q-2" class="custom-control-input" value="5">
+								<label class="custom-control-label" for="q-2-2">As the sole indicator of status and to draw symbols on a page</label>
+							</div>
+							<div class="custom-control custom-radio">
+								<input type="radio" id="q-2-3" name="q-2" class="custom-control-input" value="1">
+								<label class="custom-control-label" for="q-2-3">However I want -- even if that means green "delete" buttons</label>
+							</div>
+						</fieldset>
+						<!-- Question 3 -->
+						<fieldset>
+							<legend>Shld you use dropdown menus?</legend>
+							<div class="custom-control custom-radio">
+								<input type="radio" id="q-3-1" name="q-3" class="custom-control-input" value="1" required>
+								<label class="custom-control-label" for="q-3-1">Yes, I love dropdowns</label>
+							</div>
+							<div class="custom-control custom-radio">
+								<input type="radio" id="q-3-2" name="q-3" class="custom-control-input" value="10">
+								<label class="custom-control-label" for="q-3-2">No, gross</label>
+							</div>
+						</fieldset>
+						<!-- Question 4 -->
+						<fieldset>
+							<legend>What does ARIA stand for?</legend>
+							<div class="custom-control custom-radio">
+								<input type="radio" id="q-4-1" name="q-4" class="custom-control-input" value="2" required>
+								<label class="custom-control-label" for="q-4-1">Ambiguous Restraints for Iterative Assignment</label>
+							</div>
+							<div class="custom-control custom-radio">
+								<input type="radio" id="q-4-2" name="q-4" class="custom-control-input" value="1">
+								<label class="custom-control-label" for="q-4-2">Allergic Rhinitis and its Impact on Asthma</label>
+							</div>
+							<div class="custom-control custom-radio">
+								<input type="radio" id="q-4-3" name="q-4" class="custom-control-input" value="10">
+								<label class="custom-control-label" for="q-4-3">Accessible Rich Internet Applications</label>
+							</div>
+							<div class="custom-control custom-radio">
+								<input type="radio" id="q-4-4" name="q-4" class="custom-control-input" value="2">
+								<label class="custom-control-label" for="q-4-4">Accounting Researchers International Association</label>
+							</div>
+							<div class="custom-control custom-radio">
+								<input type="radio" id="q-4-5" name="q-4" class="custom-control-input" value="1">
+								<label class="custom-control-label" for="q-4-5">Australian Record Industry Association</label>
+							</div>
+						</fieldset>
+						<!-- Question 5 -->
+						<fieldset>
+							<legend>Icons are...</legend>
+							<div class="custom-control custom-radio">
+								<input type="radio" id="q-5-1" name="q-5" class="custom-control-input" value="7" required>
+								<label class="custom-control-label" for="q-5-1">Okay but only "okay"</label>
+							</div>
+							<div class="custom-control custom-radio">
+								<input type="radio" id="q-5-2" name="q-5" class="custom-control-input" value="10">
+								<label class="custom-control-label" for="q-5-2">Okay when used with text descriptions</label>
+							</div>
+							<div class="custom-control custom-radio">
+								<input type="radio" id="q-5-3" name="q-5" class="custom-control-input" value="7">
+								<label class="custom-control-label" for="q-5-3">The best thing to happen to the internet since mobile responsiveness</label>
+							</div>
+						</fieldset>
+						<!-- Question 6 -->
+						<fieldset>
+							<legend>Should you use carousels?</legend>
+							<div class="custom-control custom-radio">
+								<input type="radio" id="q-6-1" name="q-6" class="custom-control-input" value="2" required>
+								<label class="custom-control-label" for="q-6-1">Yes, animations impress people</label>
+							</div>
+							<div class="custom-control custom-radio">
+								<input type="radio" id="q-6-2" name="q-6" class="custom-control-input" value="1">
+								<label class="custom-control-label" for="q-6-2">Yes, they are trendy</label>
+							</div>
+							<div class="custom-control custom-radio">
+								<input type="radio" id="q-6-3" name="q-6" class="custom-control-input" value="3">
+								<label class="custom-control-label" for="q-6-3">Yes, I can fit a lot of content in a little space</label>
+							</div>
+							<div class="custom-control custom-radio">
+								<input type="radio" id="q-6-4" name="q-6" class="custom-control-input" value="2">
+								<label class="custom-control-label" for="q-6-4">Yes, more space for marketing messages! whoo!</label>
+							</div>
+							<div class="custom-control custom-radio">
+								<input type="radio" id="q-6-5" name="q-6" class="custom-control-input" value="10">
+								<label class="custom-control-label" for="q-6-5">No, they are literally the worst</label>
+							</div>
+						</fieldset>
+						<!-- Question 7 -->
+						<fieldset>
+							<legend>A user is clicking on something to perform an action which may make server calls or change application state. What UI element should be used?</legend>
+							<div class="custom-control custom-radio">
+								<input type="radio" id="q-7-1" name="q-7" class="custom-control-input" value="10" required>
+								<label class="custom-control-label" for="q-7-1">Button</label>
+							</div>
+							<div class="custom-control custom-radio">
+								<input type="radio" id="q-7-2" name="q-7" class="custom-control-input" value="3">
+								<label class="custom-control-label" for="q-7-2">Link Text</label>
+							</div>
+							<div class="custom-control custom-radio">
+								<input type="radio" id="q-7-3" name="q-7" class="custom-control-input" value="1">
+								<label class="custom-control-label" for="q-7-3">Div with javascript/css to act/look like a button or link</label>
+							</div>
+						</fieldset>
+						<!-- Question 8 -->
+						<fieldset>
+							<legend>A user is clicking on something to navigate somewhere. What UI element should be used?</legend>
+							<div class="custom-control custom-radio">
+								<input type="radio" id="q-8-1" name="q-8" class="custom-control-input" value="3" required>
+								<label class="custom-control-label" for="q-8-1">Button</label>
+							</div>
+							<div class="custom-control custom-radio">
+								<input type="radio" id="q-8-2" name="q-8" class="custom-control-input" value="10">
+								<label class="custom-control-label" for="q-8-2">Link Text</label>
+							</div>
+							<div class="custom-control custom-radio">
+								<input type="radio" id="q-8-3" name="q-8" class="custom-control-input" value="1">
+								<label class="custom-control-label" for="q-8-3">Div with javascript/css to act/look like a button or link</label>
+							</div>
+						</fieldset>
+						<!-- Question 9 -->
+						<fieldset>
+							<legend>How many popups should appear on a page?</legend>
+							<div class="custom-control custom-radio">
+								<input type="radio" id="q-9-1" name="q-9" class="custom-control-input" value="10" required>
+								<label class="custom-control-label" for="q-9-1">Zero. Zero popups should appear</label>
+							</div>
+							<div class="custom-control custom-radio">
+								<input type="radio" id="q-9-2" name="q-9" class="custom-control-input" value="7">
+								<label class="custom-control-label" for="q-9-2">No more than one</label>
+							</div>
+							<div class="custom-control custom-radio">
+								<input type="radio" id="q-9-2" name="q-9" class="custom-control-input" value="4">
+								<label class="custom-control-label" for="q-9-2">At least one</label>
+							</div>
+							<div class="custom-control custom-radio">
+								<input type="radio" id="q-9-3" name="q-9" class="custom-control-input" value="2">
+								<label class="custom-control-label" for="q-9-3">One per person on the marketing team</label>
+							</div>
+							<div class="custom-control custom-radio">
+								<input type="radio" id="q-9-4" name="q-9" class="custom-control-input" value="1">
+								<label class="custom-control-label" for="q-9-4">One in a new window, one modal on-screen, another when a user scrolls, a chat popup box, a request for permission to send push notifications, one to countdown to an arbitrary time as pressure to make a user "act now" and repeat popups opening every few minutes</label>
+							</div>
+						</fieldset>
+						<!-- Question 10 -->
+						<fieldset>
+							<legend>How many form fields should you collect?</legend>
+							<div class="custom-control custom-radio">
+								<input type="radio" id="q-10-1" name="q-10" class="custom-control-input" value="1" required>
+								<label class="custom-control-label" for="q-10-1">Ten because that is what the homework instructions say</label>
+							</div>
+							<div class="custom-control custom-radio">
+								<input type="radio" id="q-10-2" name="q-10" class="custom-control-input" value="5">
+								<label class="custom-control-label" for="q-10-2">Twelve because you should go above and beyond homework instructions</label>
+							</div>
+							<div class="custom-control custom-radio">
+								<input type="radio" id="q-10-3" name="q-10" class="custom-control-input" value="10">
+								<label class="custom-control-label" for="q-10-3">As few as possible - hopefully 5 or less</label>
+							</div>
+						</fieldset>
+						<!-- Question 11 -->
+						<fieldset>
+							<legend>What is an acceptable page load time?</legend>
+							<div class="custom-control custom-radio">
+								<input type="radio" id="q-11-1" name="q-11" class="custom-control-input" value="10" required>
+								<label class="custom-control-label" for="q-11-1">I will puke if it is more than 2 seconds</label>
+							</div>
+							<div class="custom-control custom-radio">
+								<input type="radio" id="q-11-2" name="q-11" class="custom-control-input" value="5">
+								<label class="custom-control-label" for="q-11-2">Under 3.5 seconds</label>
+							</div>
+							<div class="custom-control custom-radio">
+								<input type="radio" id="q-11-3" name="q-11" class="custom-control-input" value="3">
+								<label class="custom-control-label" for="q-11-3">Under 5 seconds</label>
+							</div>
+							<div class="custom-control custom-radio">
+								<input type="radio" id="q-11-4" name="q-11" class="custom-control-input" value="2">
+								<label class="custom-control-label" for="q-11-4">However long it takes</label>
+							</div>
+							<div class="custom-control custom-radio">
+								<input type="radio" id="q-11-5" name="q-11" class="custom-control-input" value="1">
+								<label class="custom-control-label" for="q-11-5">What do you mean by page load time?</label>
+							</div>
+						</fieldset>
+						<!-- Question 12 -->
+						<fieldset>
+							<legend>Double checking, are you the user?</legend>
+							<div class="custom-control custom-radio">
+								<input type="radio" id="q-12-1" name="q-12" class="custom-control-input" value="1" required>
+								<label class="custom-control-label" for="q-12-1">Yes, everyone else should conform to how *I* think and design</label>
+							</div>
+							<div class="custom-control custom-radio">
+								<input type="radio" id="q-12-2" name="q-12" class="custom-control-input" value="10">
+								<label class="custom-control-label" for="q-12-2">No, I am not the user</label>
+							</div>
+						</fieldset>
+					</div>
+					<button class="btn" type="submit">Get Matched</button>
+				</form>
+			</div> <!-- card-body -->
+		</div> <!-- card -->
+	</main>
+
+	<!-- Modal -->
+
+	<div id="results-modal" class="modal fade" role="dialog">
+		<div class="modal-dialog">
+			<!-- Modal content-->
+			<div class="modal-content">
+				<div class="modal-body">
+					<h5>lorem-whoops-um</h5>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<footer class="nav navbar-light bg-light">
+		<a class="nav-link" href="/">Home</a>
+		<a class="nav-link" active href="survey">Survey</a>
+		<a class="nav-link" href="api">JSON Data</a>
+		<a class="nav-link" href="queue">Approve Queue</a>
+		<button class="btn btn-outline-success" type="button" id="form-prefill">Cheat</button>
+	</footer>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	<script type="text/javascript">
+		$('#user-name').on('focusout blur change', function(){
+			if($(this).val().trim().length > 0){
+				$('.user-name-error').hide();
+			} else {
+				$('.user-name-error').show();
+			}
+		});
+
+		$('#user-image').on('focusout blur change', function(){
+			if($(this).val().trim().length > 0){
+				$('.user-image-error').hide();
+				$('#user-image-test').attr('href', $(this).val() );
+			} else {
+				$('.user-image-error').show();
+				$('#user-image-test').attr('href', 'https://images.google.com' );
+			}
+		});
+
+		$('#user-lorem-pic').on('click', function(event){
+			event.preventDefault();
+			$('#user-image').val('http://lorempixel.com/g/400/400/animals/');
+			$('#user-image').trigger('blur');
+		});
+
+		$('#form-prefill').on('click', function(event){
+			$('#user-name').val('Cheater Cheater');
+			$('#user-bio').val('Likes to eat pumpkin. Does not give a what what about filling out forms.');
+			$('#user-image').val('https://media.giphy.com/media/5wFHW55Vdk2MCZSMIV/giphy.gif');
+			for(let a of $('.custom-radio:nth-child(2)')){
+				$(a).find('input').prop('checked', true);
+			}
+		});
+
+		$('#survey-form').submit((event) =>{
+			event.preventDefault();
+
+			let newAdd = {};
+			newAdd.name = $('#user-name').val();
+			newAdd.bio = $('#user-bio').val();
+			newAdd.img = $('#user-image').val();
+			newAdd.scores = [];
+
+			for(let a of $('input[type="radio"]:checked')){
+				newAdd.scores.push(a.value);
+			}
+			if(!newAdd.name || !newAdd.bio || !newAdd.img || !newAdd.scores){ return alert('Did you miss a form field? Here is a generic alert to kill the UX');
+		}
+		console.log('new add', newAdd);
+
+		$.post('/api', newAdd, function(data){
+			console.log(data);
+			let fragment = `
+				<div class="modal-body">
+					<h2 class="match-name">Your Match: ${data[0].name}</h2>
+					<div class="match-img-wrap">
+					<img class="match-img" src="${data[0].img}" alt="image of designer match">
+					</div>
+					<h4>Bio:</h4><p class="match-bio">${data[0].bio}</p>
+				</div>
+			`;
+			$('.modal-body').replaceWith(fragment);
+			$('#results-modal').modal('show');
+		});
+
+	});
+</script>
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>UX Matcher Survey</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<!-- <link rel="stylesheet" type="text/css" href="https://bootswatch.com/4/cerulean/bootstrap.min.css"> -->
+	<link rel="stylesheet" type="text/css" href="https://bootswatch.com/4/litera/bootstrap.min.css">
+	<!-- <link rel="stylesheet" type="text/css" href="https://bootswatch.com/4/minty/bootstrap.min.css"> -->
+	<link rel="stylesheet" type="text/css" href="/assets/style.css">
+</head>
+<body>
+	<header class="jumbotron">
+		<h1>Cue the Approve Queue</h1>
+		<p>Add these to the pool of approved candidates?</p>
+		<p>Don't let the power go to your head...</p>
+	</header>
+	<main class="container">
+		<ul class="list-group" id="approve-queue">
+			<li class="list-group-item">
+				<div>
+					<h5>Loading users...</h5>
+					<button class="btn approver" data-id="200" type="button">Approve!</button>
+					<button class="btn deleter" data-id="200" type="button">Delete</button>
+				</div>
+				<img class="user-avatar" src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png">
+			</li>
+		</ul>
+	</main>
+
+	<footer class="nav navbar-light bg-light">
+		<a class="nav-link" href="/">Home</a>
+		<a class="nav-link" href="survey">Survey</a>
+		<a class="nav-link" href="api">JSON Data</a>
+		<a class="nav-link" active href="queue">Approve Queue</a>
+	</footer>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		let fragment = function(name, img, id){
+			return `
+			<li class="list-group-item">
+				<div>
+					<h5>${name}</h5>
+					<button class="btn approver" data-id="${id}" type="button">Approve!</button>
+					<button class="btn deleter" data-id="${id}" type="button">Delete</button>
+				</div>
+				<img class="user-avatar" src="${img}">
+			</li>
+			`;
+		}
+
+		let showEmpty = function(){
+			$('.list-group').html( `
+			<li class="list-group-item">
+				<div>
+					<h5>Nothing to approve</h5>
+				</div>
+			</li>
+			`)
+		}
+
+		$(document).ready(function(){
+			$.get('/api/queue').then(data =>{
+				if(!data){ return showEmpty();}
+				$('.list-group').empty();
+				for(let i of data){
+					$('.list-group').append(fragment(i.name, i.img, i.id));
+				}
+			});
+		});
+
+		$('.list-group').on('click', '.approver', function(event){
+			let id = $(this).data('id');
+			console.log('clicked approve', id);
+			$.ajax({
+				url: '/api/queue',
+				data: {id, approved: true},
+				method: 'PUT'
+			}).then(d => {
+				console.log(d);
+				if(d.rowCount > 0){
+					$(`button[data-id=${id}]`).parentsUntil('.list-group').remove();
+					if( $('.list-group').children().length == 0 ){ showEmpty(); }
+				} else {
+					$(`button[data-id=${id}].approver`).before('<p class="text-danger">Error in trying to approve this one. Bad UX!</p>');
+				}
+			});
+		});
+
+
+		$('.list-group').on('click', '.deleter', function(event){
+			let id = $(this).data('id');
+			console.log('clicked delete', id);
+			$.ajax({
+				url: '/api/queue',
+				data: {id},
+				method: 'DELETE'
+			}).then(d => {
+				console.log(d);
+				if(d.rowCount > 0){
+					$(`button[data-id=${id}]`).parentsUntil('.list-group').remove();
+					if( $('.list-group').children().length == 0 ){ showEmpty(); }
+				} else {
+					$(`button[data-id=${id}].approver`).before('<p class="text-danger">Error in trying to delete... isn\'t that fun</p>');
+				}
+			});
+		});
+</script>
+</body>
+</html>

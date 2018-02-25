@@ -1,0 +1,91 @@
+/*
+ * Globals
+ */
+
+* {
+  color: #494949;
+}
+
+p, input, label{
+  line-height: 1.6;
+}
+
+.center{
+  text-align: center;
+}
+
+.text-danger{
+  font-weight: bold;
+}
+
+footer{
+  margin-top: 1.5em;
+  padding: 2em;
+}
+
+/* 
+ * Form Styles for Survey
+ */
+.url.input-group{
+  flex-wrap: nowrap;
+}
+
+.input-group-field{
+  flex-basis: 100%;
+}
+
+
+@media screen and (max-width: 330px){
+  .url.input-group{  flex-wrap: wrap; } 
+  .input-group-append{ flex-basis: 100%; }
+  .input-group-text{ width: 100%; }
+}
+
+fieldset{
+  margin-top: 1.5em;
+  margin-bottom: 2.5em;
+}
+
+.match-img-wrap{
+  text-align: center;
+  width: 100%;
+}
+
+.match-img{
+  max-height: 250px;
+  border: .25px solid black;
+  box-shadow: 10px 10px 0 grey;
+  padding: 1em;
+  margin: 1em;
+}
+
+/* 
+ * Queue Styles 
+ */
+
+.list-group-item{
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.user-avatar{
+  border-radius: 100%;
+  border: 6px solid grey;
+}
+
+.list-group img.user-avatar{
+  float: right;
+  max-width: 80px;
+}
+
+/* 
+ * Home Page
+ */
+
+ .inner.cover{
+  min-height: 95vh;
+  padding: 4em;
+ }
