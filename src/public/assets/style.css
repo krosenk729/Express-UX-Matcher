@@ -35,7 +35,7 @@ footer{
 }
 
 
-@media screen and (max-width: 330px){
+@media screen and (max-width: 456px; ){
   .url.input-group{  flex-wrap: wrap; } 
   .input-group-append{ flex-basis: 100%; }
   .input-group-text{ width: 100%; }
@@ -81,6 +81,10 @@ fieldset{
   max-width: 80px;
 }
 
+.queue-container{
+  min-height: 45vh;
+}
+
 /* 
  * Home Page
  */
@@ -88,4 +92,8 @@ fieldset{
  .inner.cover{
   min-height: 95vh;
   padding: 4em;
+ }
+
+.btn.btn-lg.btn-secondary{
+  white-space: 
  }

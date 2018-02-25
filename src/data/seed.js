@@ -49,7 +49,7 @@ myFriends.push(
 myFriends.push(
 	new Friend('Tortoro', 
 		'Good neighbor and (with very little brains) is very unbiased in design process',
-		'/assets/hipster.png',
+		'/assets/tortoro.png',
 		Array(12).fill(7),
 		true));
 
