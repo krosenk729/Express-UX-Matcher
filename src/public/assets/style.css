@@ -35,8 +35,8 @@ footer{
 }
 
 
-@media screen and (max-width: 456px; ){
-  .url.input-group{  flex-wrap: wrap; } 
+@media screen and (max-width: 456px ){
+  .url.input-group{ flex-wrap: wrap; justify-content: flex-end; } 
   .input-group-append{ flex-basis: 100%; }
   .input-group-text{ width: 100%; }
 }
