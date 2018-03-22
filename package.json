@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Demo: https://friend-finder-fsf.herokuapp.com/survey",
   "main": "app.js",
+  "repository": "https://github.com/krosenk729/Express-UX-Matcher",
   "scripts": {
     "start": "nodemon app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
